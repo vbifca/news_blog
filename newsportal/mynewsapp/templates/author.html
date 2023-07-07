@@ -1,0 +1,77 @@
+<html>
+<head>
+  <title>Сайт с новостями</title>
+  <style>
+    /* Здесь пишем стили для сайта */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .news {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+    .news-item {
+      width: 48%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .AuthorImage {
+      width: 100%;
+      height: auto;
+    }
+    .AboutAuthor {
+      width: 70%;
+      height: auto;
+    }
+    .ArticleImg {
+      width: 100%;
+      height: auto;
+    }
+    .news-item h3 {
+      margin: 10px 0;
+    }
+    .news-item p {
+      font-size: 14px;
+      color: #333;
+    }
+    .news-item a {
+      display: block;
+      text-align: right;
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Автор</h1>
+    <p>Информация об авторе</p>
+    <div class="news">
+        <div class="AboutAuthor">
+            <img class="AuthorImage" src={{author.photo.url}}>
+          <p>{{author.name}}</p>
+          <p>{{author.lastname}}</p>
+        <p>{{author.about}}</p>
+          <a href= /news>К новостям</a>
+        </div>
+
+        {% for elem in article%}
+        <div class="news-item">
+              <h3>{{elem.title}}</h3>
+              <a href=/news/{{elem.id}}><img class="ArticleImg" src={{elem.photo.url}}></a>
+              <p>{{elem.discription}}</p>
+              <a href=/news/{{elem.id}}>Подробнее</a>
+          </div>
+        {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

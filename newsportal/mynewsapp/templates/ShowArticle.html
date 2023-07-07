@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Сайт с новостями</title>
+  <style>
+    /* Здесь пишем стили для сайта */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .news {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+    .news-item {
+      width: 48%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .authorImage {
+      width: 10%;
+      height: auto;
+    }
+    .newsImage {
+      width: 100%;
+      height: auto;
+    }
+    .news-item h3 {
+      margin: 10px 0;
+    }
+    .news-item p {
+      font-size: 14px;
+      color: #333;
+    }
+    .news-item a {
+      display: block;
+      text-align: right;
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+    <div class="news">
+      <div class="news-item">
+          <h3>{{article.title}}</h3>
+          <img class="newsImage" src={{article.photo.url}}>
+          <p>{{article.discription}}</p>
+          <p>{{article.content}}</p>
+          <a href="/news/author/{{author.id}}"><img class="authorImage" src={{author.photo.url}} height="40" width="40">
+          <a href= /news>Назад</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
